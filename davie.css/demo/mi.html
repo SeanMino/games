@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/davie.css-1.1.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <script type="text/javascript" src="../js/swiper-3.3.1.min.js" ></script>
+    <script src="../js/davie.css.js"></script>
+</head>
+<body>
+	
+	<div class="container home-search">
+	<div class="row">
+		<div class="col-12">
+			<div class="search-div"><i class="icon-search"></i><input/></div>
+		</div>
+	</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<!------------------------------轮播图--------------------------------->
+	<div class="container home-swiper">
+		<div class="row">
+			<div class="col-12">
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+					        <div class="swiper-slide">
+					        		<img src="../img/1ac82cdb-dfb7-0fc5-164e-4fcd68a867fc!720x360.jpg" />
+					        </div>
+					         <div class="swiper-slide">
+					        		<img src="../img/3cac386b-eeed-d8a2-03e4-690bcc1c7445!720x360.jpg" />
+					        </div>
+					         <div class="swiper-slide">
+					        		<img src="../img/64556050-c26f-b719-149b-80ed0a5f959e!720x360.jpg" />
+					        </div>
+					        <div class="swiper-slide">
+					        		<img src="../img/6b7c8418-17fa-5c07-e9d4-2a596d4629b4!720x360.jpg" />
+					        </div>
+					   </div>
+				     <!-- 如果需要分页器 -->
+				     <div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	<!------------------------------内容-------------------------------->
+	<section class="container">
+		<div class="row">
+			<div class="col-4 product"></div>
+			<div class="col-4 product border-r-4 border-l-4"></div>
+			<div class="col-4 product"></div>
+		</div>
+		<div class="row border-t-2">
+			<div class="col-4 product"></div>
+			<div class="col-4 product border-r-4 border-l-4"></div>
+			<div class="col-4 product"></div>
+		</div>
+		<div class="row border-t-4">
+			<div class="col-12" style="padding: 0;">
+				<img src="../img/c170a603-74ce-9040-2d22-94f16ee05d22.jpg" class="img-100" />
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-12 product-item"></div>
+		</div>
+		<div class="row">
+			<div class="col-12 product-item"></div>
+		</div>
+		<div class="row">
+			<div class="col-12 product-item"></div>
+		</div>
+		<div class="row">
+			<div class="col-12 product-item"></div>
+		</div>
+		<div class="row">
+			<div class="col-12 product-item"></div>
+		</div>
+		
+		
+	</section>
+	
+	
+	
+	
+	<!------------------------------底部导航--------------------------------->
+	<footer>
+		<div class="container" style="position: relative;">
+			<div class="blur" style="position: absolute;z-index:-1;bottom: 0;height: 100%;width: 100%;background: rgba(255,255,255,0.53);"></div>
+			<div class="row border-t-1">
+				<div class="col-3 text-center">
+					<div><i class="icon-home"></i></div>
+					<div><h6>首页</h6></div>
+				</div>
+				<div class="col-3 text-center">
+					<div><i class="icon-reorder"></i></div>
+					<div><h6>分类</h6></div></div>
+				<div class="col-3 text-center">
+					<div><i class="icon-shopping-cart"></i></div>
+					<h6>购物车</h6></div>
+				<div class="col-3 text-center">
+					<div><i class="icon-user"></i></div>
+					<div><h6>服务</h6></div></div>
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+		 var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    effect : 'fade',
+		    autoplay: 5000,//可选选项，自动滑动
+		    pagination: '.swiper-pagination',
+		  }); 
+	  
+	</script>
+</body>
+</html>
