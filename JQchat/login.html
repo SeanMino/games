@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			body{
+				margin: 0;
+			}
+			.cover{
+				width: 100%;height: 100%;
+				position: relative;
+			}
+			
+			.cover #login_panel{
+				width: 400px;
+				height: 300px;
+				border: solid 1px gainsboro;
+				background: ghostwhite;
+				margin:200px auto;
+				text-align: center;
+				padding-top: 100px;
+				font-family: "微软雅黑";
+				font-size: 24px;
+			}
+			#login_panel input{
+				font-family: "微软雅黑";
+				font-size: 24px;
+				width: 240px;height: 40px;
+				margin-top: 20px;				
+			}
+			#login_panel input[type="button"]{
+				width: 120px;
+				margin-top: 20px;
+			}
+			
+			#error_msg{
+				font-size: 16px;
+				color: red;
+				display: none;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+	</head>
+	<body>
+		
+		<div class="cover">
+			<div id="login_panel">
+				<form action="login.php" method="post">
+					
+					用户名：<input type="text" value="" placeholder="输入用户名" name="username" id="username"/><br>
+					密码：&nbsp;<input type="password" placeholder="输入密码" name="password" id="password"/><br>
+					<span id="error_msg">用户名或密码错误</span><br>
+					<input type="button" value="登录" id="submmitbtn"/>
+				</form>
+			</div>
+		</div>
+		<script>
+			
+			var username = document.getElementById('username');
+			var password = document.getElementById('password');
+			var submmitbtn = document.getElementById('submmitbtn');
+			var error_msg = document.getElementById('error_msg');
+			
+			var flag = false;
+			username.onblur = function(){
+				if(!check(this)){
+					error_msg.style.display = 'block';
+				}
+			}
+			password.onblur = function(){
+				if(!check(this)){
+					error_msg.style.display = 'block';
+				}
+			}
+			
+			function check(ele){
+				if(ele.value == "" || ele.value == null){
+					flag = false;
+				}else{
+					flag = true;
+				}
+				return flag;
+			}
+			
+			
+			submmitbtn.onclick = function(){
+				
+				if(username.value != '' && username != null && password.value != '' && password.value.length >=6){
+					submmitform();
+				}else{
+					error_msg.style.display = 'block';
+				}
+
+			}
+			
+			
+			function submmitform(){
+				$.ajax({
+					type:"post",
+					url:"server.php",
+					data:{type:'login','name':username.value,'psd':password.value},
+					success:function(data){
+						console.log(data);
+					}
+				});
+				
+				localStorage['username'] = username.value;
+				
+				window.location.href = 'index.html';
+			}
+			
+		</script>
+	</body>
+</html>
